@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-T AI Services | AI Business Solutions</title>
+
+<style>
+:root{
+  --gold:#d4af37;
+  --gold2:#f4d675;
+  --black:#050505;
+  --dark:#0b0b0b;
+  --card:#111;
+  --border:#292929;
+  --white:#fff;
+  --muted:#aaa;
+  --green:#20c997;
+  --red:#ff5c5c;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--black);
+  color:var(--white);
+  line-height:1.6;
+}
+
+button,input,textarea,select{font:inherit}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,5,5,.95);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  color:var(--gold2);
+  font-size:22px;
+  font-weight:900;
+}
+
+.logo span{color:white}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav a:hover{color:var(--gold2)}
+
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:25px;
+}
+
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(212,175,55,.16),transparent 30%),
+    radial-gradient(circle at 10% 80%,rgba(32,201,151,.08),transparent 25%);
+}
+
+.container{
+  width:min(1200px,92%);
+  margin:auto;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:50px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid #51451e;
+  background:#171407;
+  color:var(--gold2);
+  border-radius:30px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:clamp(42px,6vw,75px);
+  line-height:1.02;
+  margin-bottom:20px;
+}
+
+.gold{color:var(--gold2)}
+
+.hero p{
+  color:#bbb;
+  font-size:18px;
+  max-width:650px;
+  margin-bottom:30px;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  padding:13px 20px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.primary{
+  background:var(--gold);
+  color:#000;
+}
+
+.primary:hover{background:var(--gold2)}
+
+.secondary{
+  background:#151515;
+  color:white;
+  border:1px solid var(--border);
+}
+
+.hero-card{
+  background:linear-gradient(145deg,#171717,#090909);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 25px 80px rgba(0,0,0,.5);
+}
+
+.ai-circle{
+  width:120px;
+  height:120px;
+  margin:0 auto 25px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  border:2px solid var(--gold);
+  color:var(--gold2);
+  font-size:45px;
+  box-shadow:0 0 50px rgba(212,175,55,.15);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:25px;
+}
+
+.stat{
+  padding:15px;
+  background:#101010;
+  border:1px solid var(--border);
+  border-radius:10px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  color:var(--gold2);
+  font-size:20px;
+}
+
+section{
+  padding:85px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:25px;
+  border-radius:15px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#66551e;
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:15px;
+}
+
+.card h3{margin-bottom:10px}
+.card p{color:var(--muted);font-size:14px}
+
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.price{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:28px;
+}
+
+.price.featured{
+  border-color:var(--gold);
+}
+
+.price h3{color:var(--gold2)}
+.price-number{
+  font-size:30px;
+  font-weight:900;
+  margin:15px 0;
+}
+
+.price ul{
+  list-style:none;
+  color:#bbb;
+  margin:20px 0;
+}
+
+.price li{margin:8px 0}
+
+.price li::before{
+  content:"✓";
+  color:var(--green);
+  margin-right:8px;
+}
+
+.tool{
+  max-width:850px;
+  margin:auto;
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:18px;
+}
+
+label{
+  display:block;
+  margin:15px 0 7px;
+  color:#ddd;
+  font-weight:600;
+}
+
+input,textarea,select{
+  width:100%;
+  background:#080808;
+  color:white;
+  border:1px solid #333;
+  padding:13px;
+  border-radius:8px;
+  outline:none;
+}
+
+input:focus,textarea:focus,select:focus{
+  border-color:var(--gold);
+}
+
+textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.result{
+  display:none;
+  margin-top:20px;
+  padding:20px;
+  border:1px solid #3b3318;
+  background:#141207;
+  border-radius:10px;
+  white-space:pre-wrap;
+  color:#ddd;
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:250px 1fr;
+  gap:20px;
+}
+
+.side{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:20px;
+}
+
+.side button{
+  width:100%;
+  margin:5px 0;
+  padding:12px;
+  background:#181818;
+  color:white;
+  border:1px solid var(--border);
+  border-radius:7px;
+  cursor:pointer;
+  text-align:left;
+}
+
+.side button:hover{
+  border-color:var(--gold);
+}
+
+.panel{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:25px;
+}
+
+.order{
+  padding:15px;
+  border-bottom:1px solid var(--border);
+}
+
+.order:last-child{border-bottom:0}
+
+footer{
+  padding:50px 0;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:#888;
+}
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  text-decoration:none;
+  z-index:2000;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.notice{
+  padding:15px;
+  border-left:3px solid var(--gold);
+  background:#12100a;
+  color:#bbb;
+  margin:20px 0;
+}
+
+@media(max-width:900px){
+  nav{display:none}
+  .menu{display:block}
+  .hero-grid{grid-template-columns:1fr}
+  .grid,.price-grid{grid-template-columns:repeat(2,1fr)}
+  .dashboard{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+  .grid,.price-grid{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">A-T <span>AI SERVICES</span></div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#tools">AI Tools</a>
+      <a href="#order">Order</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+
+    <button class="menu" onclick="toggleNav()">☰</button>
+  </div>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+<div class="container">
+<div class="hero-grid">
+
+<div>
+<span class="badge">AI-POWERED DIGITAL SERVICES</span>
+
+<h1>
+Build Faster.<br>
+Work Smarter.<br>
+<span class="gold">Grow With AI.</span>
+</h1>
+
+<p>
+We help individuals, job seekers and businesses use Artificial Intelligence
+to create professional documents, content, advertisements, websites and
+digital solutions.
+</p>
+
+<div class="buttons">
+<a href="#order" class="btn primary">Start Your Project</a>
+<a href="#services" class="btn secondary">Explore Services</a>
+</div>
+</div>
+
+<div class="hero-card">
+<div class="ai-circle">AI</div>
+
+<h2 style="text-align:center">Your Digital AI Partner</h2>
+
+<p style="text-align:center;color:#999;margin-top:10px">
+From CV creation to business automation, we turn ideas into practical
+digital solutions.
+</p>
+
+<div class="stats">
+<div class="stat">
+<strong>AI</strong>
+<span>Technology</span>
+</div>
+<div class="stat">
+<strong>24/7</strong>
+<span>Digital</span>
+</div>
+<div class="stat">
+<strong>∞</strong>
+<span>Ideas</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+
+<div class="section-title">
+<h2>Our <span class="gold">AI Services</span></h2>
+<p>Professional digital services powered by modern AI tools.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📄</div>
+<h3>CV & Cover Letter</h3>
+<p>Professional CVs and cover letters tailored to your target role.</p>
+</div>
+
+<div class="card">
+<div class="icon">💼</div>
+<h3>Job Search</h3>
+<p>We help identify suitable job opportunities and application requirements.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>AI Design</h3>
+<p>Business flyers, social graphics, promotional concepts and visual content.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎬</div>
+<h3>AI Video Ads</h3>
+<p>Promotional video concepts and AI-assisted advertisement production.</p>
+</div>
+
+<div class="card">
+<div class="icon">✍️</div>
+<h3>Content Writing</h3>
+<p>Captions, product descriptions, articles, emails and marketing copy.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Website Creation</h3>
+<p>Professional websites for businesses, brands and personal projects.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>Automation</h3>
+<p>Reduce repetitive work by connecting digital workflows and AI tools.</p>
+</div>
+
+<div class="card">
+<div class="icon">🤖</div>
+<h3>AI Solutions</h3>
+<p>Custom AI-powered ideas and applications for your business.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+
+<div class="section-title">
+<h2>Simple <span class="gold">Pricing</span></h2>
+<p>Starting prices. Final pricing depends on project requirements.</p>
+</div>
+
+<div class="price-grid">
+
+<div class="price">
+<h3>CV BASIC</h3>
+<div class="price-number">₦3,000</div>
+<ul>
+<li>Professional CV</li>
+<li>PDF delivery</li>
+<li>Clean formatting</li>
+</ul>
+<button class="btn primary" onclick="selectService('CV & Cover Letter')">Order</button>
+</div>
+
+<div class="price">
+<h3>CV PRO</h3>
+<div class="price-number">₦7,000</div>
+<ul>
+<li>CV</li>
+<li>Cover Letter</li>
+<li>LinkedIn profile text</li>
+</ul>
+<button class="btn primary" onclick="selectService('CV Pro Package')">Order</button>
+</div>
+
+<div class="price featured">
+<h3>BUSINESS</h3>
+<div class="price-number">₦15,000</div>
+<ul>
+<li>5 social posts</li>
+<li>5 captions</li>
+<li>1 promotional flyer</li>
+</ul>
+<button class="btn primary" onclick="selectService('Business Content Package')">Order</button>
+</div>
+
+<div class="price">
+<h3>PREMIUM</h3>
+<div class="price-number">₦30,000+</div>
+<ul>
+<li>AI video concept</li>
+<li>Flyer</li>
+<li>Marketing copy</li>
+<li>Social content</li>
+</ul>
+<button class="btn primary" onclick="selectService('Premium AI Package')">Order</button>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="tools">
+<div class="container">
+
+<div class="section-title">
+<h2>Free <span class="gold">AI Tools</span></h2>
+<p>Try our simple browser-based tools.</p>
+</div>
+
+<div class="tool">
+
+<h3>🤖 AI Content Assistant</h3>
+
+<label>What do you want to create?</label>
+
+<select id="contentType">
+<option>Business advertisement</option>
+<option>Social media caption</option>
+<option>Product description</option>
+<option>Job application message</option>
+<option>Business introduction</option>
+</select>
+
+<label>Describe your idea</label>
+
+<textarea id="contentInput"
+placeholder="Example: I sell luxury furniture in Kano..."></textarea>
+
+<button class="btn primary" onclick="generateContent()">
+Generate Content
+</button>
+
+<div id="contentResult" class="result"></div>
+
+<div class="notice">
+This browser version generates structured content locally. A real AI API
+can be connected later to make the assistant generate dynamic AI responses.
+</div>
+
+</div>
+
+<br><br>
+
+<div class="tool">
+
+<h3>📄 CV Builder</h3>
+
+<label>Full Name</label>
+<input id="cvName" placeholder="Your full name">
+
+<label>Profession</label>
+<input id="cvProfession" placeholder="e.g. Software Engineer">
+
+<label>Education</label>
+<input id="cvEducation" placeholder="Your education">
+
+<label>Skills</label>
+<textarea id="cvSkills" placeholder="JavaScript, Python, Communication..."></textarea>
+
+<label>Experience</label>
+<textarea id="cvExperience" placeholder="Describe your experience"></textarea>
+
+<button class="btn primary" onclick="generateCV()">Create CV</button>
+
+<div id="cvResult" class="result"></div>
+
+</div>
+
+</div>
+</section>
+
+<section id="order">
+<div class="container">
+
+<div class="section-title">
+<h2>Start Your <span class="gold">Project</span></h2>
+<p>Send your request and we'll contact you.</p>
+</div>
+
+<div class="tool">
+
+<form id="orderForm">
+
+<label>Full Name</label>
+<input id="customerName" required>
+
+<label>Phone / WhatsApp</label>
+<input id="customerPhone" required>
+
+<label>Email</label>
+<input id="customerEmail" type="email">
+
+<label>Service</label>
+
+<select id="service">
+<option>CV & Cover Letter</option>
+<option>Job Search</option>
+<option>Business Content</option>
+<option>AI Flyer</option>
+<option>AI Video Advertisement</option>
+<option>Website Creation</option>
+<option>AI Automation</option>
+<option>Custom AI Solution</option>
+</select>
+
+<label>Describe what you need</label>
+
+<textarea id="description" required></textarea>
+
+<button class="btn primary" type="submit">
+Submit Project
+</button>
+
+</form>
+
+<div id="orderMessage" class="result"></div>
+
+</div>
+</div>
+</section>
+
+<section id="dashboard">
+<div class="container">
+
+<div class="section-title">
+<h2>Customer <span class="gold">Dashboard</span></h2>
+<p>Manage locally saved project requests.</p>
+</div>
+
+<div class="dashboard">
+
+<div class="side">
+<button onclick="showPanel('orders')">📋 My Orders</button>
+<button onclick="showPanel('profile')">👤 Profile</button>
+<button onclick="showPanel('stats')">📊 Statistics</button>
+<button onclick="clearOrders()">🗑 Clear Orders</button>
+</div>
+
+<div class="panel" id="dashboardPanel">
+<h3>Your Orders</h3>
+<div id="ordersList"></div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="section-title">
+<h2>Why <span class="gold">A-T AI Services?</span></h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>⚡ Fast</h3>
+<p>AI-assisted workflows help reduce repetitive work.</p>
+</div>
+
+<div class="card">
+<h3>💡 Creative</h3>
+<p>Turn simple ideas into professional digital content.</p>
+</div>
+
+<div class="card">
+<h3>🔐 Privacy</h3>
+<p>We aim to handle customer information responsibly and securely.</p>
+</div>
+
+<div class="card">
+<h3>📱 Accessible</h3>
+<p>Customers can request services directly from their phones.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<h3 class="gold">A-T AI SERVICES</h3>
+<p>AI-powered digital services for individuals and businesses.</p>
+<p style="margin-top:15px">© 2026 A-T AI Services. All rights reserved.</p>
+</div>
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/2347048718481"
+target="_blank"
+aria-label="WhatsApp">
+☏
+</a>
+
+<script>
+
+const WHATSAPP = "2347048718481";
+
+function toggleNav(){
+  const nav=document.querySelector("nav");
+
+  if(nav.style.display==="flex"){
+    nav.style.display="";
+  }else{
+    nav.style.display="flex";
+    nav.style.flexDirection="column";
+    nav.style.position="absolute";
+    nav.style.top="65px";
+    nav.style.right="15px";
+    nav.style.background="#111";
+    nav.style.padding="20px";
+    nav.style.border="1px solid #292929";
+    nav.style.borderRadius="10px";
+  }
+}
+
+function selectService(service){
+  document.getElementById("service").value=service;
+  document.getElementById("order").scrollIntoView();
+}
+
+function generateContent(){
+
+  const type=document.getElementById("contentType").value;
+  const input=document.getElementById("contentInput").value.trim();
+  const result=document.getElementById("contentResult");
+
+  if(!input){
+    alert("Please describe your idea first.");
+    return;
+  }
+
+  let output="";
+
+  if(type==="Business advertisement"){
+    output=
+`🔥 GROW YOUR BUSINESS WITH ${input.toUpperCase()}
+
+Looking for quality products or reliable services?
+
+We provide professional solutions designed to give our customers value, quality and convenience.
+
+📞 Contact us today
+📲 WhatsApp available
+
+#Business #Quality #CustomerService`;
+  }
+
+  else if(type==="Social media caption"){
+    output=
+`🚀 Turn your idea into results!
+
+${input}
+
+Quality service. Professional delivery. Customer satisfaction.
+
+📲 Contact us today.
+
+#Business #Entrepreneur #Growth`;
+  }
+
+  else if(type==="Product description"){
+    output=
+`PRODUCT DESCRIPTION
+
+${input}
+
+Key Benefits:
+✓ Professional quality
+✓ Designed for customer needs
+✓ Reliable and practical
+✓ Excellent value
+
+Contact us today for more information.`;
+  }
+
+  else if(type==="Job application message"){
+    output=
+`Dear Hiring Manager,
+
+I am writing to express my interest in the opportunity related to:
+
+${input}
+
+I believe my skills, education and experience can contribute positively to your organization.
+
+I would appreciate the opportunity to discuss my application further.
+
+Kind regards.`;
+  }
+
+  else{
+    output=
+`BUSINESS INTRODUCTION
+
+${input}
+
+We are committed to providing professional, reliable and customer-focused solutions.
+
+Our goal is to use modern technology and practical solutions to help our customers achieve better results.`;
+  }
+
+  result.style.display="block";
+  result.textContent=output;
+}
+
+function generateCV(){
+
+  const name=document.getElementById("cvName").value;
+  const profession=document.getElementById("cvProfession").value;
+  const education=document.getElementById("cvEducation").value;
+  const skills=document.getElementById("cvSkills").value;
+  const experience=document.getElementById("cvExperience").value;
+
+  if(!name || !profession){
+    alert("Please enter your name and profession.");
+    return;
+  }
+
+  const cv=
+`${name.toUpperCase()}
+${profession}
+
+PROFESSIONAL SUMMARY
+Motivated and dedicated professional seeking opportunities to apply skills,
+experience and knowledge in a productive working environment.
+
+EDUCATION
+${education || "Add your education here."}
+
+SKILLS
+${skills || "Add your skills here."}
+
+EXPERIENCE
+${experience || "Add your experience here."}
+
+REFERENCES
+Available upon request.`;
+
+  const result=document.getElementById("cvResult");
+  result.style.display="block";
+  result.textContent=cv;
+}
+
+document.getElementById("orderForm").addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const order={
+    id:"AT-"+Date.now(),
+    name:document.getElementById("customerName").value,
+    phone:document.getElementById("customerPhone").value,
+    email:document.getElementById("customerEmail").value,
+    service:document.getElementById("service").value,
+    description:document.getElementById("description").value,
+    status:"Pending",
+    date:new Date().toLocaleString()
+  };
+
+  const orders=JSON.parse(localStorage.getItem("at_ai_orders") || "[]");
+
+  orders.unshift(order);
+
+  localStorage.setItem("at_ai_orders",JSON.stringify(orders));
+
+  const message=
+`Hello A-T AI Services,
+
+I want to order your service.
+
+Name: ${order.name}
+Phone: ${order.phone}
+Service: ${order.service}
+
+Request:
+${order.description}`;
+
+  const result=document.getElementById("orderMessage");
+
+  result.style.display="block";
+
+  result.innerHTML=
+  `✅ Your request has been saved.<br><br>
+   <a class="btn primary"
+   target="_blank"
+   href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}">
+   Continue on WhatsApp
+   </a>`;
+
+  this.reset();
+
+  loadOrders();
+});
+
+function loadOrders(){
+
+  const list=document.getElementById("ordersList");
+
+  const orders=JSON.parse(localStorage.getItem("at_ai_orders") || "[]");
+
+  if(!orders.length){
+    list.innerHTML=
+    `<p style="color:#888;margin-top:15px">
+    No orders yet. Submit your first project above.
+    </p>`;
+    return;
+  }
+
+  list.innerHTML=orders.map(order=>`
+
+  <div class="order">
+
+    <strong>${escapeHTML(order.service)}</strong>
+
+    <p style="color:#aaa">
+    ${escapeHTML(order.description)}
+    </p>
+
+    <small style="color:#777">
+    ${escapeHTML(order.date)}
+    </small>
+
+    <br>
+
+    <span style="color:#d4af37">
+    Status: ${escapeHTML(order.status)}
+    </span>
+
+  </div>
+
+  `).join("");
+}
+
+function showPanel(type){
+
+  const panel=document.getElementById("dashboardPanel");
+
+  if(type==="orders"){
+
+    panel.innerHTML=
+    `<h3>Your Orders</h3>
+     <div id="ordersList"></div>`;
+
+    loadOrders();
+  }
+
+  if(type==="profile"){
+
+    panel.innerHTML=
+    `<h3>Customer Profile</h3>
+
+     <p style="color:#aaa;margin-top:15px">
+     Your customer information is stored locally in this demo version.
+     </p>
+
+     <div class="notice">
+     A real account system with Supabase authentication can be connected
+     in the next version.
+     </div>`;
+  }
+
+  if(type==="stats"){
+
+    const orders=JSON.parse(localStorage.getItem("at_ai_orders") || "[]");
+
+    panel.innerHTML=
+    `<h3>Statistics</h3>
+
+     <div class="stats">
+       <div class="stat">
+       <strong>${orders.length}</strong>
+       Orders
+       </div>
+
+       <div class="stat">
+       <strong>${orders.filter(x=>x.status==="Pending").length}</strong>
+       Pending
+       </div>
+
+       <div class="stat">
+       <strong>${orders.filter(x=>x.status==="Completed").length}</strong>
+       Completed
+       </div>
+     </div>`;
+  }
+}
+
+function clearOrders(){
+
+  if(confirm("Delete all locally saved orders?")){
+
+    localStorage.removeItem("at_ai_orders");
+
+    showPanel("orders");
+  }
+}
+
+function escapeHTML(value){
+
+  return String(value)
+  .replace(/&/g,"&amp;")
+  .replace(/</g,"&lt;")
+  .replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
+}
+
+loadOrders();
+
+</script>
+
+</body>
+</html>
